@@ -1,0 +1,31 @@
+# SOC Automation Toolkit Dependencies
+
+# Core Libraries
+requests>=2.31.0
+python-dotenv>=1.0.0
+pyyaml>=6.0.1
+
+# Security & Analysis
+cryptography>=41.0.0
+python-whois>=0.8.0
+dnspython>=2.4.0
+
+# SIEM Integrations
+splunk-sdk>=1.7.0
+elasticsearch>=8.10.0
+
+# Threat Intelligence
+stix2>=3.0.0
+taxii2-client>=2.3.0
+
+# Data Processing
+pandas>=2.1.0
+numpy>=1.25.0
+
+# Logging & Monitoring
+loguru>=0.7.0
+prometheus-client>=0.18.0
+
+# Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
