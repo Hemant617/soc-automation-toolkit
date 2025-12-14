@@ -1,0 +1,48 @@
+# SOC Automation Toolkit Configuration
+
+# SIEM Configuration
+siem:
+  type: splunk  # Options: splunk, elastic, qradar
+  host: your-siem-host.com
+  port: 8089
+  token: YOUR_API_TOKEN_HERE
+  verify_ssl: true
+
+# Threat Intelligence Feeds
+threat_intel:
+  feeds:
+    - name: alienvault
+      enabled: true
+      api_key: YOUR_API_KEY
+    - name: abuse_ch
+      enabled: true
+      url: https://urlhaus-api.abuse.ch/v1/
+    - name: custom_feed
+      enabled: false
+      url: https://your-custom-feed.com/api
+
+# Alert Configuration
+alerts:
+  email:
+    enabled: true
+    smtp_server: smtp.gmail.com
+    smtp_port: 587
+    from_address: alerts@company.com
+    to_addresses:
+      - soc@company.com
+  slack:
+    enabled: false
+    webhook_url: YOUR_SLACK_WEBHOOK
+
+# Automation Settings
+automation:
+  auto_enrich: true
+  auto_triage: true
+  auto_contain: false  # Requires approval
+  
+# Logging
+logging:
+  level: INFO  # DEBUG, INFO, WARNING, ERROR
+  file: logs/soc-automation.log
+  max_size_mb: 100
+  backup_count: 5
